@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="FileReader" class="java.io.FileReader">
+        <constructor-arg value="E://b1.csv"/>
+    </bean>
+
+    <bean id="CSVReader" class="com.opencsv.CSVReader">
+        <constructor-arg ref="FileReader"/>
+        <constructor-arg type="char" value=";"/>
+    </bean>
+
+    <bean id="connectURL" class="java.lang.String">
+        <constructor-arg value="jdbc:mysql://127.0.0.1:3306/spring"/>
+    </bean>
+
+    <bean id="connectLogin" class="java.lang.String">
+        <constructor-arg value="root"/>
+    </bean>
+
+    <bean id="connectPassword" class="java.lang.String">
+        <constructor-arg value=""/>
+    </bean>
+
+    <bean id="tableName" class="java.lang.String">
+        <constructor-arg value="NEW_TABLE"/>
+    </bean>
+</beans>
